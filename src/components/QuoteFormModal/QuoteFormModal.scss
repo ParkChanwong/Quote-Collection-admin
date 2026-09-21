@@ -1,0 +1,23 @@
+.quote-modal-heading {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    h2 { margin: 0; font-size: 21px; letter-spacing: -.7px; }
+    button { display: grid; place-items: center; flex-shrink: 0; padding: 0; width: 32px; height: 32px; border: 0; border-radius: 6px; background: #f1f4eb; color: #627553; font-size: 23px; }
+}
+.quote-modal-description, .quote-modal-note { color: #727d69; font-size: 12px; line-height: 1.8; }
+.quote-modal-description { margin: 12px 0 24px; }
+.quote-modal-note { margin: 20px 0 0; }
+.quote-form-fields {
+    display: flex; flex-direction: column; gap: 8px;
+    label { margin-top: 12px; font-size: 13px; font-weight: 600; }
+    label:first-child { margin-top: 0; }
+    input, select, textarea { width: 100%; padding: 11px 12px; border: 1px solid #dce3d5; border-radius: 7px; background: #fff; color: #243f37; font: inherit; font-size: 14px; line-height: 1.7; }
+    select { appearance: none; padding-right: 36px; background-image: url('../../assets/icons/chevron-down.svg'); background-repeat: no-repeat; background-position: right 12px center; background-size: 16px; }
+    select:disabled { opacity: .6; }
+    textarea { resize: none; min-height: 120px; }
+}
+.quote-modal-actions {
+    display: flex; justify-content: flex-end; gap: 8px; margin-top: 24px;
+    button { min-width: 76px; padding: 10px 18px; border: 1px solid #dce3d5; border-radius: 7px; background: #fffefa; color: #627553; font-size: 13px; }
+    .quote-modal-primary { background: #284d40; border-color: #284d40; color: #fffefa; }
+    button:disabled { opacity: .5; cursor: not-allowed; }
+}
