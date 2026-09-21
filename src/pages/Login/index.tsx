@@ -1,9 +1,11 @@
 import { useState, type FormEvent } from 'react';
+import { api, setAuthToken } from '../../api/axios';
+import { useNavigate } from 'react-router-dom';
 import TextInput from '../../components/TextInput';
 import './Login.scss';
-import { api } from '../../api/axios';
 
 const Login = () => {
+    const navigate = useNavigate();
     const [message, setMessage] = useState('');
     const [userId, setUserId] = useState<string>('');
     const [userPw, setUserPw] = useState<string>('');
@@ -16,7 +18,8 @@ const Login = () => {
             userId: userId,
             userPw: userPw
         }).then(result => {
-            api.defaults.headers.common['Authorization'] = `Bearer ${result.data.result}`;
+            setAuthToken(result.data.result);
+            navigate('/');
         }).catch(e => {
             setMessage(e.response.data.message);
         })

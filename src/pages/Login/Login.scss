@@ -7,11 +7,10 @@
     font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
     -webkit-font-smoothing: antialiased;
     button, input { font: inherit; }
-    button:focus-visible, a:focus-visible { outline: 3px solid #a2b8a0; outline-offset: 5px; }
 }
 .login-story { overflow: hidden; display: flex; flex-direction: column; padding: 46px 10%; background: #eeeee4; border-right: 1px solid #e5e6dc; }
 .login-brand { display: flex; align-items: center; gap: 12px; width: fit-content; text-decoration: none; color: inherit; font-size: 18px; font-weight: 700; letter-spacing: -.6px; }
-.brand-symbol { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 12px; background: #284d40; color: #f4f2df; font: 58px Georgia, serif; padding-top: 5px; }
+.brand-symbol { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 12px; background: #284d40; color: #f4f2df; font: 58px Georgia, serif; padding-top: 3px; }
 .login-brand small { display: block; margin-top: 5px; font-size: 8px; letter-spacing: 2px; font-weight: 500; }
 .story-content { width: 100%; max-width: 480px; margin: auto; padding-top: 64px; }
 .login-wrapper .eyebrow { font-size: 10px; letter-spacing: 2.2px; font-weight: 600; color: #748274; }
