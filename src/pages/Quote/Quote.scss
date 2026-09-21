@@ -1,0 +1,93 @@
+.quote-page { width: 100%; text-align: left; }
+.quote-page-heading { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+.quote-page-eyebrow { margin: 0 0 14px; color: #77816d; font-size: 10px; letter-spacing: 2px; }
+.quote-page h1 { margin: 0; font-size: 30px; font-weight: 600; letter-spacing: -1.2px; }
+.quote-page-description { margin: 12px 0 0; color: #77816d; font-size: 13px; line-height: 1.8; }
+.quote-list { margin-top: 36px; overflow: hidden; border: 1px solid #e1e4d9; border-radius: 12px; background: #fffefa; }
+.quote-list-heading {
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding: 14px 24px 12px;
+    h2 { display: flex; align-items: center; gap: 10px; margin: 0; font-size: 16px; font-weight: 600; }
+    h2 span { padding: 3px 8px; border-radius: 6px; background: #eaf0e5; color: #496341; font-size: 12px; }
+}
+.quote-list-preview { color: #77816d; font-size: 11px; }
+.quote-table-scroll {
+    overflow-x: auto;
+}
+.quote-table {
+    width: 100%; min-width: 760px; border-collapse: collapse; text-align: left; font-size: 13px;
+    caption { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+    th { padding: 8px 24px; border-block: 1px solid #e1e4d9; background: #f3f4ec; color: #727d69; font-size: 11px; font-weight: 500; }
+    td { padding: 8px 24px; border-bottom: 1px solid #eceee5; line-height: 1.8; vertical-align: top; }
+    tbody tr:last-child td { border-bottom: 0; }
+    tbody tr:hover { background: #f8f9f3; }
+    th:first-child { width: 80px; }
+    th:nth-child(3) { width: 160px; }
+    th:nth-child(4) { width: 120px; }
+    th:last-child { width: 156px; }
+    th:first-child, td:first-child,
+    th:nth-child(3), td:nth-child(3),
+    th:nth-child(4), td:nth-child(4),
+    th:last-child, td:last-child { text-align: center; }
+}
+.quote-table-number { color: #8a9382; font-variant-numeric: tabular-nums; }
+.quote-table-content { overflow-wrap: anywhere; font-size: 14px; font-weight: 500; letter-spacing: -.2px; }
+.quote-table-author { color: #727d69; }
+.quote-row-actions {
+    display: flex; justify-content: center; gap: 6px;
+    button { padding: 4px 10px; border: 1px solid #dce3d5; border-radius: 5px; background: #f1f4eb; color: #496341; font-size: 12px; line-height: 1.6; white-space: nowrap; }
+    .quote-delete-button { border-color: #ebdbd4; background: #fcf4ef; color: #a36150; }
+    button:disabled { opacity: .6; cursor: not-allowed; }
+}
+.quote-actions-note { margin: 0; padding: 10px 24px; border-top: 1px solid #eceee5; color: #77816d; font-size: 11px; }
+.quote-category { display: inline-block; padding: 2px 10px; border: 1px solid #e0e5d6; border-radius: 5px; background: #f1f4eb; color: #627553; font-size: 11px; white-space: nowrap; }
+.quote-list-footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin: 0; padding: 16px 24px; border-top: 1px solid #e1e4d9; color: #727d69; font-size: 11px; }
+.quote-table td.quote-table-empty { padding: 40px 24px; color: #727d69; text-align: center; }
+.quote-pagination {
+    display: flex; flex-wrap: wrap; gap: 4px;
+    button { display: grid; place-items: center; min-width: 30px; height: 32px; padding: 0 6px; border: 1px solid transparent; border-radius: 6px; background: transparent; color: #627553; font-size: 14px; }
+    button:hover:not(:disabled) { background: #eaf0e5; }
+    button[aria-current='page'] { background: #284d40; color: #fffefa; }
+    button[aria-current='page']:hover { background: #284d40; }
+    button:disabled { opacity: .35; cursor: default; }
+}
+@media (max-width: 700px) {
+    .quote-page h1 { font-size: 26px; }
+    .quote-list { margin-top: 28px; }
+    .quote-list-heading { align-items: flex-start; flex-direction: column; padding: 20px 16px; }
+    .quote-table th, .quote-table td { padding-right: 16px; padding-left: 16px; }
+    .quote-list-footer { padding: 16px; line-height: 1.7; }
+}
+
+.quote-row-actions button:hover:not(:disabled) { filter: brightness(.96); }
+.quote-delete-preview {
+    margin: 0; padding: 20px; border-radius: 8px; background: #f3f4ec; overflow-wrap: anywhere;
+    p { margin: 0; font-size: 14px; line-height: 1.8; }
+    footer { margin-top: 12px; color: #727d69; font-size: 12px; }
+}
+
+.quote-search {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0 0 0 auto; max-width: 100%;
+    input, select, button { height: 34px; border: 1px solid #dce3d5; border-radius: 6px; padding: 6px 10px; background: #fffefa; color: #243f37; font: inherit; font-size: 13px; }
+    select {
+        min-width: 84px;
+        appearance: none;
+        padding-right: 24px;
+        background-image: url('../../assets/icons/chevron-down.svg');
+        background-repeat: no-repeat;
+        background-position: right 4px center;
+        background-size: 16px;
+    }
+    input { flex: 1; width: 240px; min-width: 120px; }
+    input::placeholder { color: #8a9382; }
+    button { min-width: 56px; }
+    button:hover { background: #eaf0e5; }
+    .quote-search-submit { background: #eef2e8; border-color: #dce3d5; }
+    .quote-search-submit:hover { background: #e2e9da; }
+    .quote-create-button { flex-shrink: 0; min-width: 64px; background: #284d40; border-color: #284d40; color: #fffefa; font-weight: 600; }
+    .quote-create-button:hover { background: #1c3e32; }
+}
+.quote-search-error { color: #a36150; font-size: 13px; line-height: 1.7; }
+@media (max-width: 700px) {
+    .quote-search { width: 100%; margin-left: 0; }
+    .quote-search input { width: 0; }
+}
