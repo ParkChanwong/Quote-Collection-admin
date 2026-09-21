@@ -1,20 +1,15 @@
-.modal-background {
-    position: fixed;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #00000050;
-    z-index: 999;
-}
-
 .modal-container {
-    background-color: #FFFFFF;
-    max-width: 70%;
-    max-height: 70%;
-    min-width: 20%;
-    min-height: 20%;
-    border-radius: 14px;
-    padding: 16px;
+    width: min(520px, calc(100% - 32px));
+    max-height: calc(100svh - 48px);
+    margin: auto;
+    padding: 28px;
+    overflow-y: auto;
+    border: 1px solid #e1e4d9;
+    border-radius: 16px;
+    background: #fffefa;
+    color: #243f37;
+    box-shadow: 0 24px 80px #172b3526;
+    font-family: inherit;
+
+    &::backdrop { background: #1b302a66; }
 }
