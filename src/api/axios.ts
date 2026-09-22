@@ -4,7 +4,7 @@ import axios from "axios";
 const TOKEN_KEY = 'quote-admin-token';
 
 export const api = axios.create({
-    baseURL: 'http://localhost:8080',
+    baseURL: 'https://quote-collection-odpj.onrender.com',
     timeout: 10000
 });
 
