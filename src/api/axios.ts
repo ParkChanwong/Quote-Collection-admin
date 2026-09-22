@@ -3,6 +3,8 @@ import axios from "axios";
 
 const TOKEN_KEY = 'quote-admin-token';
 
+export const getAuthToken = () => sessionStorage.getItem(TOKEN_KEY);
+
 export const api = axios.create({
     baseURL: 'https://quote-collection-odpj.onrender.com',
     timeout: 10000
@@ -20,7 +22,7 @@ export const clearAuthToken = () => {
     delete api.defaults.headers.common['Authorization'];
 };
 
-const savedToken = sessionStorage.getItem(TOKEN_KEY);
+const savedToken = getAuthToken();
 if (savedToken) {
     api.defaults.headers.common['Authorization'] = `Bearer ${savedToken}`;
 }
