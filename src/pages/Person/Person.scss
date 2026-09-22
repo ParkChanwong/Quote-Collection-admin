@@ -1,0 +1,4 @@
+.person-panel { margin-top: 36px; .data-table { min-width: 760px; } }
+.person-notice { color: #727d69; font-size: 12px; line-height: 1.8; &:empty { display: none; } }
+.person-form-select { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
+@media (max-width: 700px) { .person-panel { margin-top: 28px; } }
