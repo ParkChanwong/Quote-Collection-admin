@@ -1,0 +1,13 @@
+.quote-list { margin-top: 36px; .data-table { min-width: 760px; } }
+@media (max-width: 700px) { .quote-list { margin-top: 28px; } }
+.quote-table-number { color: #8a9382; font-variant-numeric: tabular-nums; }
+.quote-table-content { overflow-wrap: anywhere; font-size: 14px; font-weight: 500; letter-spacing: -.2px; }
+.quote-table-author { color: #727d69; }
+.quote-actions-note { margin: 0; padding: 10px 24px; border-top: 1px solid #eceee5; color: #77816d; font-size: 11px; }
+.quote-delete-preview {
+    margin: 0; padding: 20px; border-radius: 8px; background: #f3f4ec; overflow-wrap: anywhere;
+    p { margin: 0; font-size: 14px; line-height: 1.8; }
+    footer { margin-top: 12px; color: #727d69; font-size: 12px; }
+}
+
+.quote-search-error { color: #a36150; font-size: 13px; line-height: 1.7; }

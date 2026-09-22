@@ -1,0 +1,64 @@
+.login-wrapper {
+    min-height: 100svh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: #243f37;
+    background: #fffefa;
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    button, input { font: inherit; }
+}
+.login-story { overflow: hidden; display: flex; flex-direction: column; padding: 46px 10%; background: #eeeee4; border-right: 1px solid #e5e6dc; }
+.login-brand { display: flex; align-items: center; gap: 12px; width: fit-content; text-decoration: none; color: inherit; font-size: 18px; font-weight: 700; letter-spacing: -.6px; }
+.brand-symbol { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 12px; background: #284d40; color: #f4f2df; font: 58px Georgia, serif; padding-top: 3px; }
+.login-brand small { display: block; margin-top: 5px; font-size: 8px; letter-spacing: 2px; font-weight: 500; }
+.story-content { width: 100%; max-width: 480px; margin: auto; padding-top: 64px; }
+.login-wrapper .eyebrow { font-size: 10px; letter-spacing: 2.2px; font-weight: 600; color: #748274; }
+.story-content h1 { margin: 22px 0 19px; font-size: clamp(28px, 2.8vw, 42px); line-height: 1.5; letter-spacing: -1.8px; font-weight: 500; }
+.story-content > p { margin: 0; font-size: 13px; line-height: 1.9; color: #727b6f; letter-spacing: -.25px; }
+.quote-art { position: relative; height: 310px; margin: 34px 0 12px; display: grid; place-items: center; }
+.quote-orbit { position: absolute; width: 300px; height: 300px; border: 1px solid #d9ddce; border-radius: 50%; }
+.quote-sheet { position: relative; width: 290px; height: 250px; margin: 0; padding: 26px 28px; background: #fffef7; border: 1px solid #e5e3d7; box-shadow: 0 14px 35px #34482e0a; transform: rotate(-6deg); }
+.quote-sheet-back { position: absolute; transform: rotate(7deg) translate(8px, 5px); background: #e0e5d7; border-color: #d5ddce; }
+.quote-number { display: block; font-size: 7px; letter-spacing: 1.7px; color: #798271; }
+.quote-mark { display: block; height: 49px; margin-top: 10px; font: 67px Georgia, serif; color: #587557; }
+.quote-sheet blockquote { margin: 0; font-family: 'AppleMyungjo', 'Batang', serif; font-size: 20px; line-height: 1.6; letter-spacing: -.7px; }
+.quote-sheet figcaption { margin-top: 14px; color: #757e6b; font-size: 9px; }
+.quote-card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; border-top: 1px solid #e9e9df; padding-top: 10px; font-size: 8px; color: #78816b; }
+.quote-card-footer > span { font-size: 18px; }
+.story-footer { display: flex; align-items: center; gap: 10px; padding-top: 25px; color: #77816d; font-size: 10px; }
+.story-footer::before { content: ''; width: 24px; height: 1px; background: #a6af98; }
+.login-panel { min-height: 100svh; display: flex; flex-direction: column; padding: 46px 11% 30px; }
+.admin-badge { display: flex; align-items: center; gap: 7px; align-self: flex-end; font-size: 9px; letter-spacing: 1.4px; color: #737a6d; }
+.admin-badge i { height: 5px; width: 5px; border-radius: 50%; background: #809577; }
+.login-box { width: 100%; max-width: 370px; margin: auto; padding: 72px 0 40px; }
+.login-heading h2 { margin: 15px 0 12px; font-size: 30px; font-weight: 600; letter-spacing: -1.4px; }
+.login-heading p { margin: 0; font-size: 12px; color: #767e6e; line-height: 1.7; }
+.login-box form { margin-top: 36px; }
+.login-field { margin-bottom: 23px; }
+.login-access-note { margin: -5px 0 25px; color: #7a8471; font-size: 10px; }
+.login-submit { display: flex; align-items: center; justify-content: center; position: relative; width: 100%; height: 42px; border: 0; border-radius: 7px; background: #284d40; color: #fffefa; font-size: 13px; font-weight: 600; transition: background .2s, transform .2s; }
+.login-submit:hover { background: #1c3e32; }
+.login-submit:active { transform: translateY(1px); }
+.login-submit > span { position: absolute; right: 18px; font-size: 19px; font-weight: 400; color: #bdcbbb; }
+.login-message { margin: 12px 0 0; color: #8c6744; font-size: 12px; line-height: 1.7; }
+.login-message:empty { display: none; }
+.login-help { display: flex; gap: 11px; align-items: flex-start; margin-top: 32px; border-top: 1px solid #e9e9e0; padding-top: 25px; color: #77806f; }
+.login-help p { margin: 0; font-size: 11px; line-height: 1.8; }
+.login-help p span { color: #808977; }
+.login-footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; width: 100%; color: #7f8875; font-size: 9px; }
+@media (min-width: 1500px) { .login-story { padding-left: 15%; padding-right: 15%; } }
+@media (max-width: 1000px) { .login-story { padding: 36px 8%; } .login-panel { padding: 36px 9% 26px; } .story-content h1 { font-size: 29px; } .login-heading h2 { font-size: 26px; } .quote-sheet { width: 260px; } }
+@media (max-width: 700px) {
+    .login-wrapper { grid-template-columns: 1fr; }
+    .login-story { padding: 25px 26px; border-right: 0; border-bottom: 1px solid #e1e3d8; }
+    .login-brand { font-size: 15px; }
+    .brand-symbol { width: 36px; height: 36px; font-size: 50px; }
+    .login-brand small { font-size: 7px; }
+    .story-content, .story-footer { display: none; }
+    .login-panel { min-height: calc(100svh - 87px); padding: 25px 28px; }
+    .admin-badge { font-size: 8px; }
+    .login-box { padding: 46px 0; max-width: 400px; }
+    .login-heading h2 { font-size: 29px; }
+    .login-footer { max-width: 400px; margin: 0 auto; }
+}

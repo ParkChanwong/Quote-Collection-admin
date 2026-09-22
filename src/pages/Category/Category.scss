@@ -1,0 +1,59 @@
+
+.category-selectors { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-top: 20px; }
+.category-selector { text-align: left; border: 1px solid #e1e4d9; background: #fafbf5; border-radius: 12px; padding: 14px 16px; color: #284d40; transition: background .15s; &:hover { background: #edf1e7; } &.is-selected { background: #284d40; border-color: #284d40; color: #fffefa; .category-english, .category-selector-description, small { color: #c2d0b9; } } }
+.category-english { font-size: 9px; color: #77816d; letter-spacing: 1.6px; }
+.category-selector-title { display: flex; justify-content: space-between; align-items: baseline; margin-top: 0; font-size: 16px; font-weight: 600; > span { font-size: 22px; font-weight: 500; } small { margin-left: 5px; font-size: 11px; color: #77816d; font-weight: 400; } }
+.category-selector-description { display: block; margin-top: 5px; font-size: 11px; color: #77816d; line-height: 1.7; }
+.category-notice { margin: 10px 0 0; font-size: 11px; color: #77816d; line-height: 1.7; }
+@media (max-width: 850px) { .category-selectors { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 700px) { .category-selector { padding: 14px; } .category-selector-description { font-size: 10px; } .category-english { letter-spacing: .5px; } }
+
+@media (max-width: 700px) {
+    .category-selector-description { display: none; }
+    .category-selector-title { margin-top: 0; }
+    .category-selectors { gap: 8px; }
+    .category-panel .data-table { min-width: 0; table-layout: fixed;
+        th, td { padding: 8px 16px; }
+        .category-number, .category-group { display: none; }
+        th.category-actions { width: 132px !important; }
+        .category-name { overflow-wrap: anywhere; }
+    }
+}
+
+.category-selector-title > .category-selector-label { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px; font-size: 16px; font-weight: 600; .category-english { font-weight: 400; } }
+
+.category-panel { margin-top: 36px; }
+@media (min-width: 701px) { .category-panel .data-table { min-width: 460px; } }
+.category-number { color: #8a9382; font-variant-numeric: tabular-nums; }
+.category-name { font-weight: 500; }
+
+// 카테고리 전환은 목록 위의 한 줄 탭으로 표시합니다.
+.category-selectors { display: flex; gap: 8px; margin-top: 16px; }
+.category-selector { flex: 1; min-width: 0; padding: 10px 14px; border-radius: 8px; }
+.category-selector-description { display: none; }
+.category-selector-title { gap: 12px; }
+.category-selector-title > span { font-size: 16px; }
+.category-selector-title > .category-selector-label { font-size: 14px; gap: 6px; }
+
+.category-panel .data-table-heading > div > p { display: none; }
+.category-notice:empty { display: none; }
+@media (max-width: 850px) {
+    .category-selector .category-english { display: none; }
+    .category-selector { padding: 10px 8px; }
+    .category-selector-title { gap: 4px; }
+}
+@media (max-width: 450px) {
+    .category-selector-title small { display: none; }
+    .category-selectors { gap: 4px; }
+}
+
+.admin-page-actions .category-selectors { margin-top: 0; }
+.admin-page-actions .category-selector { flex: 0 1 auto; min-width: 130px; font: inherit; }
+.admin-page-actions .category-selector-title { gap: 10px; }
+.admin-page-actions .category-selector-label { flex-direction: column; gap: 3px; }
+
+@media (max-width: 1050px) {
+    .admin-page-actions .category-selector { flex: 1; min-width: 0; }
+}
+
+@media (max-width: 700px) { .category-panel { margin-top: 28px; } }

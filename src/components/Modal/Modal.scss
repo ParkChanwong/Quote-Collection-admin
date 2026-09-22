@@ -1,0 +1,15 @@
+.modal-container {
+    width: min(520px, calc(100% - 32px));
+    max-height: calc(100svh - 48px);
+    margin: auto;
+    padding: 28px;
+    overflow-y: auto;
+    border: 1px solid #e1e4d9;
+    border-radius: 16px;
+    background: #fffefa;
+    color: #243f37;
+    box-shadow: 0 24px 80px #172b3526;
+    font-family: inherit;
+
+    &::backdrop { background: #1b302a66; }
+}

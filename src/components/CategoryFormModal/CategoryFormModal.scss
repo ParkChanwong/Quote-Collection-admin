@@ -1,0 +1,6 @@
+.category-eyebrow { margin: 0 0 14px; color: #77816d; font-size: 10px; letter-spacing: 2px; }
+.category-form input { padding: 10px 12px; background: #fffefa; border: 1px solid #dce3d5; border-radius: 6px; color: #243f37; font-size: 13px; }
+.category-form-actions button { padding: 10px 16px; border: 1px solid #dce3d5; border-radius: 6px; background: #fffefa; color: #284d40; font-size: 13px; white-space: nowrap; }
+button.category-primary { background: #284d40; border-color: #284d40; color: #fffefa; &:hover { background: #1c3e32; } &:disabled { opacity: .45; cursor: not-allowed; } }
+.category-form { color: #243f37; h2 { margin: 0; font-size: 23px; } > p:not(.category-eyebrow) { color: #77816d; font-size: 13px; line-height: 1.7; } label { display: block; margin: 24px 0 10px; font-size: 13px; } input { width: 100%; font: inherit; } }
+.category-form-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 28px; }
