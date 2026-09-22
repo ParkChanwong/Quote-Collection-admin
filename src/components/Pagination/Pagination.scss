@@ -1,0 +1,10 @@
+.pagination {
+    display: flex; flex-wrap: wrap; gap: 4px;
+    button { display: grid; place-items: center; min-width: 30px; height: 32px; padding: 0 6px; border: 1px solid transparent; border-radius: 6px; background: transparent; color: #627553; font-size: 14px; }
+    button:hover:not(:disabled) { background: #eaf0e5; }
+    button[aria-current='page'] { background: #284d40; color: #fffefa; }
+    button[aria-current='page']:hover { background: #284d40; }
+    button:disabled { opacity: .35; cursor: default; }
+}
+
+
