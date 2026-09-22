@@ -1,0 +1,9 @@
+.table-search .table-action {
+    height: 34px; min-width: 56px; padding: 6px 10px;
+    border: 1px solid #dce3d5; border-radius: 6px;
+    background: #fffefa; color: #243f37; font: inherit; font-size: 13px; white-space: nowrap;
+    &:hover:not(:disabled) { background: #eaf0e5; }
+    &:disabled { opacity: .5; cursor: not-allowed; }
+    &.table-action-search { background: #eef2e8; &:hover:not(:disabled) { background: #e2e9da; } }
+    &.table-action-create { flex-shrink: 0; min-width: 64px; background: #284d40; border-color: #284d40; color: #fffefa; font-weight: 600; &:hover:not(:disabled) { background: #1c3e32; } }
+}
