@@ -1,7 +1,8 @@
-import { useEffect, useId, useState } from 'react';
+import { useId, useState } from 'react';
 import CloseIcon from '../../assets/icons/close.svg?react';
 import Modal from '../Modal';
-import { api } from '../../api/axios';
+import { useQuery } from '@tanstack/react-query';
+import { optionApi, type QuoteSubmitValues } from '../../api/quote';
 import './QuoteFormModal.scss';
 
 export type QuoteFormValues = {
@@ -10,7 +11,6 @@ export type QuoteFormValues = {
     quote: string;
 };
 
-export type QuoteSubmitValues = { personId: number; themeId: number; quote: string };
 
 type QuoteFormModalProps = {
     mode: 'create' | 'edit';
@@ -26,36 +26,18 @@ const QuoteFormModal = ({ mode, initialValues, onClose, onSubmit, saving, submit
     const [values, setValues] = useState<QuoteFormValues>(initialValues ?? {
         personName: '', themeName: '', quote: '',
     });
-    const [persons, setPersons] = useState<{ id: number; name: string }[]>([]);
-    const [themes, setThemes] = useState<{ id: number; name: string }[]>([]);
-    const [personId, setPersonId] = useState('');
-    const [themeId, setThemeId] = useState('');
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState('');
-
-    useEffect(() => {
-        const controller = new AbortController();
-        Promise.all([
-            api.get<{ result: { id: number; name: string }[] }>('/person', { signal: controller.signal }),
-            api.get<{ result: { id: number; name: string }[] }>('/theme', { signal: controller.signal }),
-        ]).then(([personResponse, themeResponse]) => {
-            if (controller.signal.aborted) return;
-            const personOptions = personResponse.data.result;
-            const themeOptions = themeResponse.data.result;
-            setPersons(personOptions);
-            setThemes(themeOptions);
-            // 목록 응답에는 이름만 있으므로 유일하게 일치하는 경우에만 미리 선택합니다.
-            const matchedPersons = personOptions.filter(item => item.name === initialValues?.personName);
-            const matchedThemes = themeOptions.filter(item => item.name === initialValues?.themeName);
-            if (matchedPersons.length === 1) setPersonId(String(matchedPersons[0].id));
-            if (matchedThemes.length === 1) setThemeId(String(matchedThemes[0].id));
-        }).catch(() => {
-            if (!controller.signal.aborted) setError('인물과 주제 목록을 불러오지 못했습니다. 창을 다시 열어 주세요.');
-        }).finally(() => {
-            if (!controller.signal.aborted) setLoading(false);
-        });
-        return () => controller.abort();
-    }, [initialValues]);
+    const personsQuery = useQuery({ queryKey: ['persons'], queryFn: ({ signal }) => optionApi.persons(signal) });
+    const themesQuery = useQuery({ queryKey: ['themes'], queryFn: ({ signal }) => optionApi.themes(signal) });
+    const persons = personsQuery.data ?? [];
+    const themes = themesQuery.data ?? [];
+    const [selectedPersonId, setPersonId] = useState<string | null>(null);
+    const [selectedThemeId, setThemeId] = useState<string | null>(null);
+    const matchedPersons = persons.filter(item => item.name === initialValues?.personName);
+    const matchedThemes = themes.filter(item => item.name === initialValues?.themeName);
+    const personId = selectedPersonId ?? (matchedPersons.length === 1 ? String(matchedPersons[0].id) : '');
+    const themeId = selectedThemeId ?? (matchedThemes.length === 1 ? String(matchedThemes[0].id) : '');
+    const loading = personsQuery.isPending || themesQuery.isPending;
+    const error = personsQuery.isError || themesQuery.isError ? '인물과 주제 목록을 불러오지 못했습니다. 창을 다시 열어 주세요.' : '';
 
     const action = mode === 'create' ? '등록' : '수정';
 
