@@ -24,11 +24,11 @@
         font-family: inherit;
         font-size: 12px;
         color: #284638;
-        transition: border-color .2s, box-shadow .2s;
+        transition: border-color .2s;
         outline: none;
 
         &::placeholder { color: #909786; }
-        &:focus { border-color: #63836b; box-shadow: 0 0 0 3px #66805a12; }
+        &:focus { border-color: #63836b; }
         &:disabled { opacity: .6; cursor: not-allowed; }
     }
 
